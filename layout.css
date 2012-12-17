@@ -1,0 +1,167 @@
+/*
+	HTML5 Reset
+*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}									
+
+article, aside, figure, footer, header, hgroup, nav, section {display: block;}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. Don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+	white-space: pre; /* CSS2 */
+	white-space: pre-wrap; /* CSS 2.1 */
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+ 
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {outline: none;}
+
+small {font-size: 85%;}
+
+strong, th {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+/* END HTML5 RESET */
+/* ============================================================================================================================= */
+
+
+/* TWEETS2LIST styles */
+/* ============================================================================================================================= */
+	
+/* General */
+body											{ background:#FFFFFF; margin-top:10px; }
+.centred										{ width:960px; margin:0px auto; position:relative; }
+
+/* Our container that holds the twitter timeline widget */
+#input											{ margin-top:12px; }
+#input iframe									{ width:400px; }
+
+/* Our tweets2list output container */
+#output											{ border:1px solid #d2d2d2; width:250px; position:relative; background-color:#e8edd2; }
+
+/* A container for our twitter follow button */
+#output .follow_button							{ position:absolute; right:4px; top:12px; width:auto; height:auto; }
+
+/* Our tweets2list styles */
+.tweets2list_loading							{ padding:12px; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+.tweets2list_header								{ padding:12px; }
+.tweets2list_header	h2							{ font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#333333; }
+.tweets2list_content							{ padding:12px; height:300px; overflow:auto; }
+.tweets2list_content .tco-hidden				{ display:none; }
+.tweets2list_content abbr						{ text-decoration:none; cursor:auto; text-transform:none; border-bottom:0;  }
+.tweets2list_content a.permalink				{ text-decoration:none; color:#a8a8a8; }
+.tweets2list_content a.permalink:hover			{ color:#000000; text-decoration:underline; }
+.tweets2list_content ol							{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333333; list-style-type:none; }
+.tweets2list_content ol li						{ margin-bottom:0.5em; }
+.tweets2list_content .footer ul					{ list-style-type:none; display:inline; }
+.tweets2list_content .footer ul li				{ float:left; border-right:1px solid #ccc; margin-right:6px; }
+.tweets2list_content .footer ul a				{ text-decoration:none; color:#bbb; margin-right:6px; }
+.tweets2list_content .footer ul a:hover			{ color:#000000; text-decoration:underline; }
+.tweets2list_content .footer b					{ font-weight:normal; }
+.tweets2list_content .e-entry-title a			{ color:#00aa33; text-decoration:none; }
+.tweets2list_content .e-entry-title a:hover		{ text-decoration:underline; }
+.tweets2list_content .avatar					{ float:left; margin-right:4px; margin-bottom:4px; width:32px; height:32px; }
+.tweets2list_content .e-entry-content			{ clear:both; }
+.tweets2list_content .p-name					{ line-height:1em; font-weight:bold; }
+.tweets2list_content a.profile					{ text-decoration:none; color:#000000; }
+.tweets2list_content a.profile:hover			{ text-decoration:underline; }
+.tweets2list_content a.profile .p-nickname		{ color:#a8a8a8; }
+.tweets2list_content a.profile .p-nickname b	{ font-weight:normal; }
+.tweets2list_content a.expand					{ display:none; }
+.tweets2list_footer								{ background-color:#e8edd2; padding:12px; border-top:1px solid #ccc; }
+.tweets2list_footer	a.tweet-box-button			{ display:block; background-color:#fff; border:1px solid #ccc; padding:4px; color:#a8a8a8; font-family:Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; }
+.tweets2list_footer	a.tweet-box-button:hover	{ border-color:#666; }
+
+
+/* DEMO styles */
+/* ============================================================================================================================= */
+
+#demo_controls									{ position:absolute; left:350px; top:0px; width:400px; height:400px; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+#demo_controls label							{ padding-left:4px; }
+#demo_controls h1								{ font-size:16px; margin-bottom:1em; }
+#demo_controls p								{ margin-bottom:2em; }
+#demo_controls .control							{ margin-bottom:6px; }
+

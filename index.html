@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Tweets2List demo</title>
+	<meta name="description" content="Demonstration of the tweets2list.js jquery plugin for styling a Twitter Timeline widget."> 
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="layout.css">
+    
+    <!-- HTML5 Shiv -->
+    <!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+    
+    <!-- JQuery Library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    
+</head>
+<body>
+
+	<div class="centred">
+
+        <!-- The output div is where the timeline will be cloned to -->
+        <div id="output">
+            <!-- NB. tweets2list.js cannot clone the twitter follow button from the source timeline -->
+            <!-- so if you want one, just add it yourself in the normal way (as per the example below) -->
+            <div class="follow_button">
+                <a href="https://twitter.com/GaryCottington" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @GaryCottington</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+        </div>
+        
+        <!-- The input div is where you place the code for your twitter timeline (note that the input div is not displayed) -->
+        <div id="input" style="display:none;">
+        	<!-- Replace the twitter code below with your own Twitter Timeline -->
+            <a class="twitter-timeline" data-dnt=true href="https://twitter.com/GaryCottington" data-widget-id="272277385934675969">Tweets by @GaryCottington</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        
+        <!-- The markup below is solely for this demo and is not part of tweets2list  -->
+        <div id="demo_controls">
+        	<h1>Tweets2List demonstration</h1>
+            <p>Customising your Twitter timeline is easy with the Tweets2List API.<br/>You can, of course, also apply your own CSS to the timeline to give you complete control over its appearance.</p>
+        	<form action="" method="post"></form>
+            	<div class="control"><input id="source" name="source" type="checkbox" value="1"><label for="source">Show source Twitter Timeline</label></div>
+                <div class="control"><input id="profile" name="profile" type="checkbox" value="1" checked><label for="profile">Show avatar/profile</label></div>
+                <div class="control"><input id="dtime" name="dtime" type="checkbox" value="1" checked><label for="dtime">Show date/time</label></div>
+                <div class="control"><input id="actions" name="actions" type="checkbox" value="1" checked><label for="actions">Show actions</label></div>
+                <div class="control"><input id="head" name="head" type="checkbox" value="1" checked><label for="head">Show header</label></div>
+                <div class="control"><input id="foot" name="foot" type="checkbox" value="1" checked><label for="foot">Show footer</label></div>
+                <div class="control">
+                	<select id="qty" name="qty">
+                    	<option value="20">Number of Tweets to load...</option>
+                    	<option value="3">3 tweets</option>
+                        <option value="4">4 tweets</option>
+                        <option value="5">5 tweets</option>
+                        <option value="10">10 tweets</option>
+                        <option value="15">15 tweets</option>
+                        <option value="20">20 tweets</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    
+    <!-- include the tweets2list file -->
+    <script src="jquery-tweets2list-0.3.2.min.js"></script>
+    
+    <!-- initialise and customise tweets2list -->
+	<script type="text/javascript">
+		$(function() {
+			// Create a new instance of tweets2list (required)
+			var t = new Tweets2List(); 
+			
+			// Set some custom tweets2list properties (optional)
+			t.set('quantity',10);
+			
+			// Assign the input and output divs (required)
+			t.connect('input','output');
+			
+			// Get the tweets (required)
+			t.get();
+			
+			// ----------------------------------------------------------------------
+			// The code below is solely for this demonstration page and is not part of
+			// of the tweets2list implementation
+			// ----------------------------------------------------------------------
+			
+			// Bind our demo controls
+			$("#source").on("click", function(event){
+				if($('#source').is(':checked')) {
+					$('#input').show();	
+				} else {
+					$('#input').hide();	
+				}
+			});
+			
+			$("#profile").on("click", function(event){
+				if($('#profile').is(':checked')) {
+					t.set('profile',true);	
+				} else {
+					t.set('profile',false);
+				}
+			});
+			
+			$("#dtime").on("click", function(event){
+				if($('#dtime').is(':checked')) {
+					t.set('date',true);	
+				} else {
+					t.set('date',false);
+				}
+			});
+			
+			$("#actions").on("click", function(event){
+				if($('#actions').is(':checked')) {
+					t.set('actions',true);	
+				} else {
+					t.set('actions',false);
+				}
+			});
+			
+			$("#head").on("click", function(event){
+				if($('#head').is(':checked')) {
+					t.set('header',true);
+					$(".follow_button").show();	
+				} else {
+					t.set('header',false);
+					$(".follow_button").hide();	
+				}
+			});
+			
+			$("#foot").on("click", function(event){
+				if($('#foot').is(':checked')) {
+					t.set('footer',true);
+				} else {
+					t.set('footer',false);
+				}
+			});
+			
+			$("#qty").change(function() {
+				t.clear();
+				t.set('quantity',parseInt($("#qty").val()));
+				t.connect('input','output');
+				t.get();
+			});
+		});
+	</script>
+    
+</body>
+</html>
