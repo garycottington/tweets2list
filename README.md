@@ -99,74 +99,74 @@ installation instructions above.
 set() function properties
 -------------------------
 
-**Property: actions**
-Valid values: true, false
-Purpose: Shows or hides the action links below each tweet.
+**Property: actions**  
+Valid values: true, false  
+Purpose: Shows or hides the action links below each tweet.  
 Default value: true
 
-**Property: date**
-Valid values: true, false
-Purpose: Shows or hides the time/date for each tweet.
+**Property: date**  
+Valid values: true, false  
+Purpose: Shows or hides the time/date for each tweet.  
 Default value: true
 
-**Property: footer**
-Valid values: true, false
-Purpose: Shows or hides the footer of the twitter timeline.
+**Property: footer**  
+Valid values: true, false  
+Purpose: Shows or hides the footer of the twitter timeline.  
 Default value: true
 
-**Property: header**
-Valid values: true, false
-Purpose: Shows or hides the header of the twitter timeline.
+**Property: header**  
+Valid values: true, false  
+Purpose: Shows or hides the header of the twitter timeline.  
 Default value: true
 
-**Property: language**
-Valid values: en
-Purpose: Reserved for future use.
+**Property: language**  
+Valid values: en  
+Purpose: Reserved for future use.  
 Default value: en
 
-**Property: loading_message**
-Valid values: String
-Purpose: The message displayed in your output div while the tweets are loaded.
+**Property: loading_message**  
+Valid values: String  
+Purpose: The message displayed in your output div while the tweets are loaded.  
 Default value: Loading Tweets...
 
-**Property: loading_attempts**
-Valid values: Number
-Purpose: The number of attempts that tweets2list will make to load the tweets, before timing out.
+**Property: loading_attempts**  
+Valid values: Number  
+Purpose: The number of attempts that tweets2list will make to load the tweets, before timing out.  
 Default value: 10
 
-**Property: loading_timer**
-Valid values: Number
-Purpose: The time, in milliseconds, between each loading attempt.
+**Property: loading_timer**  
+Valid values: Number  
+Purpose: The time, in milliseconds, between each loading attempt.  
 Default value: 2000
 
-**Property: profile**
-Valid values: true, false
-Purpose: Shows or hides the avatar/profile for each tweet.
+**Property: profile**  
+Valid values: true, false  
+Purpose: Shows or hides the avatar/profile for each tweet.  
 Default value: true
 
-**Property: quantity**
-Valid values: Number from 1-20
-Purpose: The initial number of tweets to display.
+**Property: quantity**  
+Valid values: Number from 1-20  
+Purpose: The initial number of tweets to display.  
 Default value: 20
 
-**Property: refresh**
-Valid values: true, false
-Purpose: Whether to keep the cloned list up to date with new tweets or not.
+**Property: refresh**  
+Valid values: true, false  
+Purpose: Whether to keep the cloned list up to date with new tweets or not.  
 Default value: true
 
-**Property: twitter_down**
-Valid values: String
-Purpose: The message to display if the Twitter timeline fails to load.
+**Property: twitter_down**  
+Valid values: String  
+Purpose: The message to display if the Twitter timeline fails to load.  
 Default value: Twitter feed is unavailable.
 
-**Property: update_timer**
-Valid values: Number
-Purpose: The time, in milliseconds, between each refresh of the tweets2list timeline.
+**Property: update_timer**  
+Valid values: Number  
+Purpose: The time, in milliseconds, between each refresh of the tweets2list timeline.  
 Default value: 20000
 
-**Property: verbose**
-Valid values: true, false
-Purpose: Show or hide tweets2list warning/error messages.
+**Property: verbose**  
+Valid values: true, false  
+Purpose: Show or hide tweets2list warning/error messages.  
 Default value: true
 
 Developer Notes
