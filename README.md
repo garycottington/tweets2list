@@ -40,35 +40,45 @@ Create your Twitter timeline widget via your Twitter account (Settings->Widgets)
 Download the tweets2list files.
 
 Include the jquery library in the head of your web page.
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+```
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+```
 
 Add a div to your web page for the source timeline widget, and make it hidden.
-    <div id="input" style="display:none;"></div>
+```
+<div id="input" style="display:none;"></div>
+```
 
 Copy and paste the code provided by Twitter for your timeline widget into your input div.
 
 Add a div to your web page for the output of tweets2list.
-    <div id="output"></div>
+```
+<div id="output"></div>
+```
 
 At the bottom of your page, just before the closing body tag, include the tweets2list script.
-    <script src="jquery-tweets2list-0.3.2.min.js"></script>
+```
+<script src="jquery-tweets2list-0.3.2.min.js"></script>
+```
 
 Below this add the following code to create your tweets2list instance.
-    <script type="text/javascript">
-		$(function() {
-			// Create a new instance of tweets2list (required)
-			var t = new Tweets2List(); 
-			
-			// Set some custom tweets2list properties (optional)
-			t.set('quantity',10);
-			
-			// Assign the input and output divs (required)
-			t.connect('input','output');
-			
-			// Get the tweets (required)
-			t.get();
-		});
-	</script>
+```
+<script type="text/javascript">
+	$(function() {
+		// Create a new instance of tweets2list (required)
+		var t = new Tweets2List(); 
+		
+		// Set some custom tweets2list properties (optional)
+		t.set('quantity',10);
+		
+		// Assign the input and output divs (required)
+		t.connect('input','output');
+		
+		// Get the tweets (required)
+		t.get();
+	});
+</script>
+```
 
 That's it for the basic configuration.
 If you experience problems you should first check that you have correctly specified your domain
